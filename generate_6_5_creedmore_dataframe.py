@@ -31,10 +31,10 @@ danger_space.overlay(ax)  # Highlight danger space on the plot
 
 
 # Range card for this zero with 5mph cross-wind from left to right
-zero.winds = [Wind(Velocity.MPH(5), Angular.OClock(3))]
+zero.winds = [Wind(Velocity.MPH(10), Angular.OClock(3))]
 range_card = calc.fire(zero, trajectory_range=1000, trajectory_step=5)
 # for p in range_card: print(p.formatted())
 range_card.dataframe().to_clipboard()
 df = range_card.dataframe(True).drop(['slant_height', 'mach', 'angle', 'slant_distance', 'density_ratio', 'drag', 'energy', 'ogw', 'flag'], axis=1).set_index('distance')
 
-df.to_csv("range_card_5mph.csv")
+df.to_csv("range_card_10mph.csv")
